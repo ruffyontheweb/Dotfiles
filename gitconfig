@@ -1,0 +1,16 @@
+[user]
+	name = Tuan T. Pham
+	email = tuan@vt.edu
+
+[core]
+	editor = vim
+
+[color]
+	ui = auto
+	branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+
+[alias]
+	st = status
