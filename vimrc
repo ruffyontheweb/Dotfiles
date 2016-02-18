@@ -7,7 +7,7 @@ colorscheme molokai
 set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-" git clone from https://github.com/gmarik/Vundle.vim.git
+" git clone from https://github.com/gmarik/Vundle.vim.git vundle
 Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'

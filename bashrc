@@ -117,5 +117,3 @@ export POWERLINE_COMMAND=~/src/powerline/scripts/powerline
 
 export WORKON_HOME=~/.env
 mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
-
