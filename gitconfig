@@ -1,6 +1,3 @@
-[user]
-	name = Ruffy Zarookian
-	email = ruffy.zarookian@apogee-research.com
 [difftool "meld"]
     trustExitCode = false
 [difftool]
