@@ -1,3 +1,18 @@
+[user]
+	name = Ruffy Zarookian
+	email = ruffy.zarookian@apogee-research.com
+[difftool "meld"]
+    trustExitCode = false
+[difftool]
+    prompt = false
+[diff]
+    tool = meld
+[mergetool "meld"]
+    trustExitCode = false
+[mergetool]
+    keepBackup = false
+[merge]
+    tool = meld
 [core]
 	editor = vim
 
@@ -12,5 +27,5 @@
 	st = status
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	cs = commit -v
-
+	
 # lg: https://coderwall.com/p/euwpig/a-better-git-log
