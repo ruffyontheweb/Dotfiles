@@ -5,14 +5,16 @@ colorscheme molokai
 " https://github.com/tomasr/molokai.git
 
 set nocompatible
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" git clone from https://github.com/gmarik/Vundle.vim.git vundle
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'klen/python-mode'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
 
 " NERDTree keybinding
 map <F2> :NERDTreeToggle<CR>
