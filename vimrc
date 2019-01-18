@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'klen/python-mode'
 Plugin 'airblade/vim-gitgutter'
+Bundle 'chase/vim-ansible-yaml'
 
 call vundle#end()
 
@@ -62,3 +63,5 @@ if has("autocmd")
 endif
 
 autocmd BufNewFile,BufRead Vagrantfile setl filetype=ruby
+execute pathogen#infect()
+call pathogen#helptags()

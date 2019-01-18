@@ -116,8 +116,40 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export POWERLINE_COMMAND=~/src/powerline/scripts/powerline
-. ~/src/powerline/powerline/bindings/bash/powerline.sh
+#export POWERLINE_COMMAND=~/.local/bin/powerline
+#. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
-export WORKON_HOME=~/.env
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/.virtualenvs
 mkdir -p $WORKON_HOME
+
+export PATH=/home/rzarookian/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/rzarookian/.vimpkg/bin
+
+
+
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+
+
+#eval `ssh-agent -s`
+#ssh-add ~/.ssh/id_rsa

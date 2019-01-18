@@ -3,13 +3,15 @@
 [difftool]
     prompt = false
 [diff]
-    tool = meld
+	tool = kdiff3
+	guitool = kdiff3
 [mergetool "meld"]
     trustExitCode = false
 [mergetool]
     keepBackup = false
 [merge]
     tool = meld
+	tool = kdiff3
 [core]
 	editor = vim
 
@@ -26,3 +28,8 @@
 	cs = commit -v
 	
 # lg: https://coderwall.com/p/euwpig/a-better-git-log
+[difftool "kdiff3"]
+	cmd = kdiff3 $LOCAL $REMOTE --output $MERGED
+	trustExitCode = false
+[mergetool "kdiff3"]
+	trustExitCode = false
